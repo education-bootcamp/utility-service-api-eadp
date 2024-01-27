@@ -19,3 +19,7 @@ try{
 }catch (e){
     console.log(e)
 }
+
+app.get('/api/v1/test',(req,resp,next)=>{
+    resp.send(`<h2>Hello User (Utility Service)</h2>`);
+});
