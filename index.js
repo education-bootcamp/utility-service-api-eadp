@@ -9,6 +9,7 @@ const port = process.env.SERVER_PORT;
 const app = express();
 app.use(cors());
 
+const cartRoute = require('./routes/cartRoute');
 
 //=======================================
 const eurekaClient = new Eureka({
@@ -61,3 +62,5 @@ process.on('SIGINT', () => {
         process.exit();
     });
 })
+
+app.use('/api/v1/cart', cartRoute);
