@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 
 const cartRoute = require('./routes/cartRoute');
+const reviewRoute = require('./routes/ReviewRoute');
 
 //=======================================
 const eurekaClient = new Eureka({
@@ -64,3 +65,4 @@ process.on('SIGINT', () => {
 })
 
 app.use('/api/v1/cart', cartRoute);
+app.use('/api/v1/reviews', reviewRoute);
